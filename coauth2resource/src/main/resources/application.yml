@@ -1,0 +1,15 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: coauth2resource
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://oauthserver:9000
+          jwk-set-uri: http://oauthserver:9000/oauth2/jwks
+      authorizationserver:
+        endpoint:
+          oidc:
+            user-info-uri: http://oauthserver:9000/userinfo
